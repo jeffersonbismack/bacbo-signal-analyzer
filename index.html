@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0b0d">
+  <meta name="description" content="Bac Bo Signal Analyzer - análise estatística do histórico de resultados.">
+  <title>Bac Bo Signal Analyzer</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <span class="eyebrow">ANALYTICS</span>
+      <h1>Bac Bo <span>Signal Analyzer</span></h1>
+    </div>
+    <button id="resetBtn" class="ghost-btn" type="button">Limpar histórico</button>
+  </header>
+
+  <main class="container">
+    <section class="hero card">
+      <div>
+        <p class="eyebrow">PAINEL PRINCIPAL</p>
+        <h2>Registre as rodadas e acompanhe as tendências.</h2>
+        <p class="muted">A análise usa somente os resultados que você cadastrar.</p>
+      </div>
+      <div id="lastResult" class="last-result">—</div>
+    </section>
+
+    <section class="stats-grid">
+      <article class="stat card">
+        <span>Total</span>
+        <strong id="totalCount">0</strong>
+      </article>
+      <article class="stat card player">
+        <span>Player</span>
+        <strong id="playerCount">0</strong>
+        <small id="playerPct">0%</small>
+      </article>
+      <article class="stat card banker">
+        <span>Banker</span>
+        <strong id="bankerCount">0</strong>
+        <small id="bankerPct">0%</small>
+      </article>
+      <article class="stat card tie">
+        <span>Empate</span>
+        <strong id="tieCount">0</strong>
+        <small id="tiePct">0%</small>
+      </article>
+    </section>
+
+    <section class="grid-2">
+      <article class="card">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">ENTRADA DE DADOS</p>
+            <h3>Registrar resultado</h3>
+          </div>
+        </div>
+        <div class="result-buttons">
+          <button class="result-btn player-btn" data-result="P" type="button">
+            <span>PLAYER</span>
+            <small>Registrar</small>
+          </button>
+          <button class="result-btn banker-btn" data-result="B" type="button">
+            <span>BANKER</span>
+            <small>Registrar</small>
+          </button>
+          <button class="result-btn tie-btn" data-result="T" type="button">
+            <span>EMPATE</span>
+            <small>Registrar</small>
+          </button>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">LEITURA AUTOMÁTICA</p>
+            <h3>Tendência recente</h3>
+          </div>
+        </div>
+        <div id="analysis" class="analysis">
+          Cadastre algumas rodadas para iniciar a análise.
+        </div>
+      </article>
+    </section>
+
+    <section class="card">
+      <div class="section-title">
+        <div>
+          <p class="eyebrow">HISTÓRICO</p>
+          <h3>Últimas rodadas</h3>
+        </div>
+        <span id="streak" class="badge">Sem sequência</span>
+      </div>
+      <div id="history" class="history empty">Nenhum resultado registrado.</div>
+    </section>
+
+    <section class="notice">
+      <strong>Nota de segurança:</strong>
+      as tendências exibidas são descritivas e baseadas no histórico registrado.
+      Elas não garantem o próximo resultado nem uma taxa fixa de acerto.
+    </section>
+  </main>
+
+  <footer>
+    Bac Bo Signal Analyzer · versão inicial
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("sw.js").catch(() => {});
+    }
+  </script>
+</body>
+</html>
