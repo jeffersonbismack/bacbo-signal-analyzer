@@ -1,0 +1,10 @@
+{
+  "name": "Bac Bo Signal Analyzer",
+  "short_name": "BacBo Analyzer",
+  "description": "Ferramenta de análise estatística para histórico de Bac Bo.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#09090b",
+  "theme_color": "#0b0b0d",
+  "lang": "pt-BR"
+}
