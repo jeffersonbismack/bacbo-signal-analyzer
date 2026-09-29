@@ -23,7 +23,7 @@
       <div>
         <p class="eyebrow">PAINEL PRINCIPAL</p>
         <h2>Registre as rodadas e acompanhe as tendências.</h2>
-        <p class="muted">A análise usa somente os resultados que você cadastrar.</p>
+        <p class="muted">O motor combina frequência, janelas recentes, sequências e alternância.</p>
       </div>
       <div id="lastResult" class="last-result">—</div>
     </section>
@@ -77,36 +77,53 @@
       <article class="card">
         <div class="section-title">
           <div>
-            <p class="eyebrow">LEITURA AUTOMÁTICA</p>
-            <h3>Tendência recente</h3>
+            <p class="eyebrow">MOTOR DE SINAIS</p>
+            <h3>Análise automática</h3>
           </div>
         </div>
         <div id="analysis" class="analysis">
-          Cadastre algumas rodadas para iniciar a análise.
+          Cadastre algumas rodadas para iniciar o motor estatístico.
         </div>
       </article>
     </section>
 
-    <section class="card">
-      <div class="section-title">
-        <div>
-          <p class="eyebrow">HISTÓRICO</p>
-          <h3>Últimas rodadas</h3>
+    <section class="grid-2">
+      <article class="card">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">PADRÕES</p>
+            <h3>Como o motor analisa</h3>
+          </div>
         </div>
-        <span id="streak" class="badge">Sem sequência</span>
-      </div>
-      <div id="history" class="history empty">Nenhum resultado registrado.</div>
+        <ul class="feature-list">
+          <li><strong>Frequência:</strong> compara Player, Banker e Empate em janelas recentes.</li>
+          <li><strong>Sequência:</strong> identifica repetições consecutivas.</li>
+          <li><strong>Alternância:</strong> mede mudanças entre Player e Banker.</li>
+          <li><strong>Consistência:</strong> cruza janelas curta, média e recente antes de destacar uma tendência.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">HISTÓRICO</p>
+            <h3>Últimas rodadas</h3>
+          </div>
+          <span id="streak" class="badge">Sem sequência</span>
+        </div>
+        <div id="history" class="history empty">Nenhum resultado registrado.</div>
+      </article>
     </section>
 
     <section class="notice">
-      <strong>Nota de segurança:</strong>
-      as tendências exibidas são descritivas e baseadas no histórico registrado.
-      Elas não garantem o próximo resultado nem uma taxa fixa de acerto.
+      <strong>Importante:</strong>
+      o sinal é uma classificação estatística do histórico cadastrado. Ele não prevê o próximo resultado,
+      não garante acerto e não deve ser interpretado como certeza de ganho.
     </section>
   </main>
 
   <footer>
-    Bac Bo Signal Analyzer · versão inicial
+    Bac Bo Signal Analyzer · motor estatístico v1
   </footer>
 
   <script src="app.js"></script>
